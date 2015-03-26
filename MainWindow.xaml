@@ -1,8 +1,10 @@
-﻿<Window x:Class="WTTasks.MainWindow"
+﻿<mahAppCtrl:MetroWindow x:Class="WTTasks.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        xmlns:mahAppCtrl="http://metro.mahapps.com/winfx/xaml/controls"
+                        WindowStartupLocation="CenterScreen"
+        Title="Schedule" Height="600" Width="800">
     <Grid>
         
     </Grid>
-</Window>
+</mahAppCtrl:MetroWindow>

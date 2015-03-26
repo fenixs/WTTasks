@@ -1,8 +1,17 @@
 ﻿<Application x:Class="WTTasks.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml">
+             >
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WTTasks;component/Styles/Controls.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/WTTasks;component/Styles/Colors.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/WTTasks;component/Styles/Fonts.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/WTTasks;component/Styles/Accents/Cobalt.xaml"></ResourceDictionary>
+                <!--<ResourceDictionary Source="pack://application:,,,/WTTasks;component/Styles/Accents/Green.xaml"></ResourceDictionary>-->
+                <!--<ResourceDictionary Source="pack://applcaition:,,,/WTTasks;component/Styles/Accents/Steel.xaml"></ResourceDictionary>-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
