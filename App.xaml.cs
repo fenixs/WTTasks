@@ -22,6 +22,14 @@ namespace WTTasks
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+            if(Environment.Is64BitOperatingSystem)
+            {
+                PubModel.__OSType = 64;
+            }
+            else
+            {
+                PubModel.__OSType = 32;
+            }
             bool startUpFlag = false;
             //判断进程中是否已经存在当前程序实例
             _mutex = new Mutex(true, PubModel.__APPNAME, out startUpFlag);

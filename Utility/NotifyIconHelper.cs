@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Imaging;
 
 namespace WTTasks.Utility
 {
@@ -61,7 +62,8 @@ namespace WTTasks.Utility
         private void SetupNotifyIconHelper()
         {
             //获取系统图标当托盘图标
-            _NotifyIncon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
+            //_NotifyIncon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
+            _NotifyIncon.Icon = WTTasks.Properties.Resources.Mobile1;
             _NotifyIncon.ContextMenuStrip = new ContextMenuStrip();
 
             ToolStripSeparator separator1 = new ToolStripSeparator();   //分隔符
@@ -70,11 +72,21 @@ namespace WTTasks.Utility
 
             ToolStripMenuItem exitMenuItem = new ToolStripMenuItem("退出");
             exitMenuItem.Click += exitMenuItem_Click;
+
+            _NotifyIncon.ContextMenuStrip.Items.AddRange(new ToolStripItem[] { menuItem1,separator1,exitMenuItem });
+            _NotifyIncon.Visible = true;
         }
 
         void exitMenuItem_Click(object sender, EventArgs e)
         {
             //TODO:退出程序
+
+            if (MessageBox.Show("确定要退出托盘程序吗?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                BackgroundWindow.ExitApp();
+                NotifyIconHelper.Instance().Hide();
+            }
+
         }
 
         void menuItem1_Click(object sender, EventArgs e)

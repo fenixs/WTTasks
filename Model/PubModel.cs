@@ -38,6 +38,11 @@ namespace WTTasks.Model
         /// config.xml文件路径
         /// </summary>
         public static string __Config { get; set; }
+
+        /// <summary>
+        /// 当前系统是32位还是64位
+        /// </summary>
+        public static int __OSType { get; set; }
         #endregion
         
     }

@@ -61,7 +61,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BackgroundWindow.xaml.cs">
+      <DependentUpon>BackgroundWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utility\NotifyIconHelper.cs" />
+    <Page Include="BackgroundWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -150,7 +157,10 @@
     <Folder Include="Converter\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\App.ico" />
+    <Resource Include="Resources\Mobile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

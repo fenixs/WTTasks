@@ -1,0 +1,11 @@
+﻿<Window x:Class="WTTasks.BackgroundWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="0" Width="0" IsEnabled="False"
+        ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Background="{x:Null}"
+        IsHitTestVisible="False" IsTabStop="False" Focusable="False" WindowStyle="None" AllowsTransparency="True" Opacity="0" OverridesDefaultStyle="True"
+        Title="">
+    <Grid>
+        
+    </Grid>
+</Window>
