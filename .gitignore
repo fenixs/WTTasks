@@ -43,6 +43,6 @@ Temporary Items
 .apdisk
 
 #
-obj
+obj/
 *.user
-bin
+bin/
