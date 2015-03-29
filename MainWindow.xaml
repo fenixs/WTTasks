@@ -4,6 +4,13 @@
         xmlns:mahAppCtrl="http://metro.mahapps.com/winfx/xaml/controls"
                         WindowStartupLocation="CenterScreen"
         Title="Schedule" Height="600" Width="800" Icon="Resources/Mobile.png">    
+    <mahAppCtrl:MetroWindow.RightWindowCommands>
+        <mahAppCtrl:WindowCommands>
+            <StackPanel Orientation="Horizontal">
+                <Button Width="100" Content="测试"></Button>
+            </StackPanel>
+        </mahAppCtrl:WindowCommands>
+    </mahAppCtrl:MetroWindow.RightWindowCommands>
     <Grid>
         
     </Grid>
