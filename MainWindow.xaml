@@ -6,8 +6,13 @@
         Title="Schedule" Height="600" Width="800" Icon="Resources/Mobile.png">    
     <mahAppCtrl:MetroWindow.RightWindowCommands>
         <mahAppCtrl:WindowCommands>
-            <StackPanel Orientation="Horizontal">
-                <Button Width="100" Content="测试"></Button>
+            <StackPanel Orientation="Horizontal" Background="Transparent" VerticalAlignment="Bottom">
+                <Menu Background="Transparent">
+                    <MenuItem Header="菜单" Background="Transparent" Foreground="White">
+                        <MenuItem Header="退出" Background="{StaticResource AccentColorBrush}" Foreground="White" x:Name="menuExit">                            
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
             </StackPanel>
         </mahAppCtrl:WindowCommands>
     </mahAppCtrl:MetroWindow.RightWindowCommands>
