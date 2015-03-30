@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WTTasks.Utility;
+using WTTasks.View;
 
 namespace WTTasks
 {
@@ -84,6 +85,35 @@ namespace WTTasks
 
         
         #endregion
+        #region "菜单操作"
+        /// <summary>
+        /// 菜单操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            string arg = (sender as MenuItem).CommandParameter.ToString();
+            if (string.IsNullOrEmpty(arg))
+                return;
+            switch (arg)
+            {
+                case "exit":
+                    {
+                        //退出事件
+                        BackgroundWindow.ExitApp();
+                        break;
+                    }
+                case "about":
+                    {
+                        var about = new About();                        
+                        about.ShowDialog();
+                        break;
+                    }
+            }
+        }
+        #endregion
+        
 
 
     }

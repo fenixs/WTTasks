@@ -63,7 +63,7 @@ namespace WTTasks.Utility
         {
             //获取系统图标当托盘图标
             //_NotifyIncon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
-            _NotifyIncon.Icon = WTTasks.Properties.Resources.Mobile1;
+            _NotifyIncon.Icon = WTTasks.Properties.Resources.App;
             _NotifyIncon.ContextMenuStrip = new ContextMenuStrip();
 
             ToolStripSeparator separator1 = new ToolStripSeparator();   //分隔符

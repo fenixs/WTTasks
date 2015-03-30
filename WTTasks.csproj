@@ -65,6 +65,9 @@
       <DependentUpon>BackgroundWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility\NotifyIconHelper.cs" />
+    <Compile Include="View\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
     <Page Include="BackgroundWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,6 +111,14 @@
     <Page Include="Styles\Fonts.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -157,10 +168,13 @@
     <Folder Include="Converter\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Mobile.png" />
+    <Resource Include="Resources\App.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Mobile.ico" />
+    <Resource Include="Resources\App.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\App_Large.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

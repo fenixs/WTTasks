@@ -2,14 +2,17 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mahAppCtrl="http://metro.mahapps.com/winfx/xaml/controls"
-                        WindowStartupLocation="CenterScreen"
-        Title="Schedule" Height="600" Width="800" Icon="Resources/Mobile.png">    
+                        WindowStartupLocation="CenterScreen" FontSize="14"
+        Title="Schedule" Height="600" Width="800" Icon="Resources/App.png">    
     <mahAppCtrl:MetroWindow.RightWindowCommands>
         <mahAppCtrl:WindowCommands>
             <StackPanel Orientation="Horizontal" Background="Transparent" VerticalAlignment="Bottom">
                 <Menu Background="Transparent">
                     <MenuItem Header="菜单" Background="Transparent" Foreground="White">
-                        <MenuItem Header="退出" Background="{StaticResource AccentColorBrush}" Foreground="White" x:Name="menuExit">                            
+                        
+                        <MenuItem Header="关于" Background="{StaticResource AccentColorBrush}" Click="MenuItem_Click" CommandParameter="about"></MenuItem>
+                        <Separator Style="{StaticResource SeparatorStyle}"/>
+                        <MenuItem Header="退出" Background="{StaticResource AccentColorBrush}" Click="MenuItem_Click" CommandParameter="exit">                            
                         </MenuItem>
                     </MenuItem>
                 </Menu>

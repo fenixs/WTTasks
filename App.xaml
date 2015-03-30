@@ -12,6 +12,7 @@
                 <ResourceDictionary Source="pack://application:,,,/WTTasks;component/Styles/Accents/Cobalt.xaml"></ResourceDictionary>
                 <!--<ResourceDictionary Source="pack://application:,,,/WTTasks;component/Styles/Accents/Green.xaml"></ResourceDictionary>-->
                 <!--<ResourceDictionary Source="pack://applcaition:,,,/WTTasks;component/Styles/Accents/Steel.xaml"></ResourceDictionary>-->
+                <ResourceDictionary Source="pack://application:,,,/WTTasks;component/Styles/Styles.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
