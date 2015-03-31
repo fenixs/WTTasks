@@ -8,7 +8,7 @@ using System.Windows;
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("WTTasks")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("个人电脑助手")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("WTTasks")]
