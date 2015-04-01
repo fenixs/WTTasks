@@ -3,13 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mahAppCtrl="http://metro.mahapps.com/winfx/xaml/controls"
                         WindowStartupLocation="CenterScreen" FontSize="14"
+                         BorderThickness="1" BorderBrush="{StaticResource AccentColorBrush}"
         Title="Schedule" Height="600" Width="800" Icon="Resources/App.png">    
     <mahAppCtrl:MetroWindow.RightWindowCommands>
         <mahAppCtrl:WindowCommands>
             <StackPanel Orientation="Horizontal" Background="Transparent" VerticalAlignment="Bottom">
                 <Menu Background="Transparent">
                     <MenuItem Header="菜单" Background="Transparent" Foreground="White">
-                        
+                        <MenuItem Header="新闻" Background="{StaticResource AccentColorBrush}" Click="MenuItem_Click" CommandParameter="news"></MenuItem>
                         <MenuItem Header="关于" Background="{StaticResource AccentColorBrush}" Click="MenuItem_Click" CommandParameter="about"></MenuItem>
                         <Separator Style="{StaticResource SeparatorStyle}"/>
                         <MenuItem Header="退出" Background="{StaticResource AccentColorBrush}" Click="MenuItem_Click" CommandParameter="exit">                            

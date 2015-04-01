@@ -98,6 +98,12 @@ namespace WTTasks
                 return;
             switch (arg)
             {
+                case "news":
+                    {
+                        var news = new NewsList();
+                        news.ShowDialog();
+                        break;
+                    }
                 case "exit":
                     {
                         //退出事件

@@ -1,0 +1,13 @@
+﻿<mahAppCtrl:MetroWindow x:Class="WTTasks.View.NewsList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mahAppCtrl="http://metro.mahapps.com/winfx/xaml/controls"
+                        WindowStyle="None" ShowMaxRestoreButton="False" ShowMinButton="False" WindowStartupLocation="CenterScreen" Height="400" Width="600" ShowInTaskbar="False"
+                         BorderThickness="1" BorderBrush="{StaticResource AccentColorBrush}"
+        Title="新闻资讯" Icon="../Resources/App.ico" >
+    <Grid>
+        <Border x:Name="brNews" DockPanel.Dock="Top" BorderBrush="{x:Null}" Background="Transparent">
+            
+        </Border>
+    </Grid>
+</mahAppCtrl:MetroWindow>

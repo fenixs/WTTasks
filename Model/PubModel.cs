@@ -5,6 +5,7 @@
  * 修改:
  * */
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,6 +45,18 @@ namespace WTTasks.Model
         /// </summary>
         public static int __OSType { get; set; }
         #endregion
-        
+
+        #region "新闻列表相关"
+        /// <summary>
+        /// 获取新闻的地址
+        /// </summary>
+        public static string __NewsUri { get; set; }
+
+        /// <summary>
+        /// 新闻列表页面标签
+        /// </summary>
+        public static SortedList __NewsTag { get; set; }
+        #endregion
+
     }
 }
