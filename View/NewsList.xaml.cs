@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WTTasks.Utility;
 
 namespace WTTasks.View
 {
@@ -23,6 +24,15 @@ namespace WTTasks.View
         public NewsList()
         {
             InitializeComponent();
+            this.Loaded += NewsList_Loaded;
+        }
+
+        void NewsList_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.biDataload.IsBusy = true;
+            BLL.TaskBLL.Instance.SpiderNewsToHtml();
+
+            this.biDataload.IsBusy = false;
         }
 
         private void LoadNewsList()

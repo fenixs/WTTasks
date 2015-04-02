@@ -6,6 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WTTasks;component/Styles/Telerik.Windows.Controls.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="pack://application:,,,/WTTasks;component/Styles/Controls.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="pack://application:,,,/WTTasks;component/Styles/Colors.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="pack://application:,,,/WTTasks;component/Styles/Fonts.xaml"></ResourceDictionary>

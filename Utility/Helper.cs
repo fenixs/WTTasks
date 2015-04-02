@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace WTTasks.Utility
@@ -58,6 +59,39 @@ namespace WTTasks.Utility
         {
             return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
+
+
+        #endregion
+
+        #region "多个匹配内容"
+        
+        /// <summary>
+        /// 多个匹配内容
+        /// </summary>
+        /// <param name="input">输入</param>
+        /// <param name="pattern">表达式</param>
+        /// <param name="groupName">分组</param>
+        /// <returns></returns>
+        public List<string> GetList(string input,string pattern,string groupName)
+        {
+            List<string> list = new List<string>();
+            Regex re = new Regex(pattern, RegexOptions.IgnoreCase);
+            MatchCollection mcs = re.Matches(input);
+            foreach (Match mc in mcs)
+            {
+                if((string.IsNullOrEmpty(groupName)))
+                {
+                    list.Add(mc.Value);
+                }
+                else
+                {
+                    list.Add(mc.Groups[groupName].Value);
+                }
+            }
+
+            return list;
+        }
+
 
 
         #endregion

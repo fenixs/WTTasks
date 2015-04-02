@@ -18,3 +18,6 @@ March31th,2015
 完成about窗体,xml:space="preserve"保留空格
 
 April 1st,2015
+完成文件读写 
+April 2nd,2015
+完成HtmlHelper

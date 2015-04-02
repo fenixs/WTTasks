@@ -4,12 +4,14 @@
  * 
  * */
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WTTasks.Model;
+using WTTasks.Utility;
 
 namespace WTTasks.BLL
 {
@@ -52,19 +54,37 @@ namespace WTTasks.BLL
             {
                 return;
             }
-            string path = PubModel.__StartupPath + "\\News\\news.html";
+            string path = PubModel.__StartupPath + "\\News\\news.htm";
             if (File.Exists(path))
             {
                 FileInfo fi = new FileInfo(path);
                 if (fi.CreationTime < DateTime.Now.AddHours(-2))
-                {
-                    //TODO:删除文件
-
+                {                    
+                    WTTools.IOHelper.Instance.DeleteFile(path);
                 }
+
             }
             if(File.Exists(path))
             {
                 return;
+            }
+            string html = "";
+            html = HtmlHelper.Instance.GetHtml(PubModel.__NewsUri);
+            HtmlHelper.Instance.FixUrl(PubModel.__NewsUri, html);
+
+            StringBuilder sbTag = new StringBuilder();
+            StringBuilder sbList = new StringBuilder();
+            string templatePath = PubModel.__StartupPath + "\\News\\news.html";
+            string newHtml = WTTools.IOHelper.Instance.ReadFile(templatePath);
+
+            int i = 1;
+            string time = DateTime.Now.ToString("yyyy-MM-dd");
+            string no = "";
+            foreach (DictionaryEntry m   in PubModel.__NewsTag)
+            {
+                string content = WTTools.CString.CutString(html, m.Value.ToString().Split('⊙')[0], m.Value.ToString().Split('⊙')[1], false);
+                ArrayList al = HtmlHelper.Instance.GetLinks(content);
+
             }
         }
 
