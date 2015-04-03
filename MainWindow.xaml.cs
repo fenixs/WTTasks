@@ -61,7 +61,7 @@ namespace WTTasks
             {
                 this.Show();        //显示系统
                 //如果系统最小化，还原系统
-                if(this.WindowState== System.Windows.WindowState.Maximized)
+                if(this.WindowState== System.Windows.WindowState.Minimized)
                 {
                     this.WindowState = System.Windows.WindowState.Normal;
                 }

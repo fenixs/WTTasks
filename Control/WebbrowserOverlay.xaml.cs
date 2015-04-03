@@ -22,6 +22,11 @@ namespace WTTasks.Control
     /// </summary>
     public partial class WebbrowserOverlay : Window
     {
+        /*
+         * WebBrowser先天缺陷，优先级比wpf高
+         * 需要使用一个webbrowseroverlay来覆盖
+         * */
+
         FrameworkElement _placementTarget;
 
         public WebBrowser WebBrowser { get { return _wb; } }
@@ -30,29 +35,29 @@ namespace WTTasks.Control
         {
             InitializeComponent();
             _placementTarget = placementTarget;
-            Window owner = Window.GetWindow(_placementTarget);
+            Window owner = Window.GetWindow(placementTarget);
             Debug.Assert(owner != null);
-            owner.LocationChanged += delegate { _placementTarget_SizeChanged(); };
-            _placementTarget.SizeChanged += delegate { _placementTarget_SizeChanged(); };
+            owner.LocationChanged += delegate { OnSizeLocationChanged(); };
+            _placementTarget.SizeChanged += delegate { OnSizeLocationChanged(); };
 
             if (owner.IsVisible)
             {
-                Owner = owner;
-                Show();
+                Owner = owner;                
+                Show();                
             }
             else
-            {
-                
-                owner.IsVisibleChanged += (s,e)=>
+            {                
+                owner.IsVisibleChanged += delegate
                     {
                         if(owner.IsVisible)
                         {
-                            Owner = owner;
-                            Show();
+                            Owner = owner;                            
+                            Show();                            
                         }
-
                     };
             }
+
+            
         }
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
@@ -67,9 +72,9 @@ namespace WTTasks.Control
                     );
             }
         }
-        
 
-        void _placementTarget_SizeChanged()
+
+        void OnSizeLocationChanged()
         {
             Point offset = _placementTarget.TranslatePoint(new Point(), Owner);
             Point size = new Point(_placementTarget.ActualWidth, _placementTarget.ActualHeight);
@@ -78,14 +83,15 @@ namespace WTTasks.Control
 
             HwndSource hwndSource = (HwndSource)HwndSource.FromVisual(Owner);
             CompositionTarget ct = hwndSource.CompositionTarget;
-            offset = ct.TransformFromDevice.Transform(offset);
-            size = ct.TransformFromDevice.Transform(size);
+            offset = ct.TransformToDevice.Transform(offset);
+            size = ct.TransformToDevice.Transform(size);
 
             Win32.POINT screenLoc = new Win32.POINT(offset);
             Win32.ClientToScreen(hwndSource.Handle, ref screenLoc);
             Win32.POINT screenSize = new Win32.POINT(size);
 
             Win32.MoveWindow(((HwndSource)HwndSource.FromVisual(this)).Handle, screenLoc.X, screenLoc.Y, screenSize.X, screenSize.Y, true);
+            //Debug.Write(string.Format("{0},{1}",size.X,size.Y));
         }
 
     }

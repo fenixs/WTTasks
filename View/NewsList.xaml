@@ -3,14 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mahAppCtrl="http://metro.mahapps.com/winfx/xaml/controls"
                         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" x:Class="WTTasks.View.NewsList"
-                        WindowStyle="None" ShowMaxRestoreButton="False" ShowMinButton="False" WindowStartupLocation="CenterScreen" Height="400" Width="600" ShowInTaskbar="False"
-                        
+                        WindowStyle="None" ShowMaxRestoreButton="False" ShowMinButton="False" WindowStartupLocation="CenterScreen" Height="400" Width="600" ShowInTaskbar="True"         
+               
                          BorderThickness="1" BorderBrush="{StaticResource AccentColorBrush}"
-        Title="新闻资讯" Icon="../Resources/App.ico" >
-    <Grid>
-        <telerik:RadBusyIndicator x:Name="biDataload">
-            <Border x:Name="brNews" DockPanel.Dock="Top" BorderBrush="{x:Null}" Background="Transparent">
-            
+        Title="新闻资讯" Icon="../Resources/App.png" >
+    <Grid Margin="0 0">
+        <telerik:RadBusyIndicator x:Name="biDataload" BusyContent="">
+            <Border x:Name="brNews" BorderBrush="{x:Null}" Background="Transparent" Padding="2" >
+                
             </Border>
         </telerik:RadBusyIndicator>
     </Grid>
