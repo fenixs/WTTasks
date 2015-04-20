@@ -33,6 +33,8 @@ namespace WTTasks
 
             NotifyIconHelper._NotifyIncon.MouseClick += _NotifyIncon_MouseClick;
             this.StateChanged += MainWindow_StateChanged;
+            
+
         }
 
         void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)

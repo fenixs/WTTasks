@@ -10,7 +10,7 @@
             <StackPanel Orientation="Horizontal" Background="Transparent" VerticalAlignment="Bottom">
                 <Menu Background="Transparent">
                     <MenuItem Header="菜单" Background="Transparent" Foreground="White">
-                        <MenuItem Header="新闻" Background="{StaticResource AccentColorBrush}" Click="MenuItem_Click" CommandParameter="news"></MenuItem>
+                        <!--<MenuItem Header="新闻" Background="{StaticResource AccentColorBrush}" Click="MenuItem_Click" CommandParameter="news"></MenuItem>-->
                         <MenuItem Header="关于" Background="{StaticResource AccentColorBrush}" Click="MenuItem_Click" CommandParameter="about"></MenuItem>
                         <Separator Style="{StaticResource SeparatorStyle}"/>
                         <MenuItem Header="退出" Background="{StaticResource AccentColorBrush}" Click="MenuItem_Click" CommandParameter="exit">                            

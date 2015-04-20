@@ -29,9 +29,10 @@ namespace WTTasks.View
         {
             InitializeComponent();
             //this.Loaded += NewsList_Loaded;
-            //WebbrowserOverlay wo = new WebbrowserOverlay(brNews);
-            //wb = wo.WebBrowser;
+            WebbrowserOverlay wo = new WebbrowserOverlay(brNews);
+            wb = wo.WebBrowser;
             //wb.Navigate("http://www.baidu.com");
+            
 
             LoadNewsList();
         }
@@ -52,11 +53,14 @@ namespace WTTasks.View
             {
                 path = Model.PubModel.__NewsUri;
             }
-            WebbrowserOverlay wo = new WebbrowserOverlay(brNews);
-            wb = wo.WebBrowser;
+            //WebbrowserOverlay wo = new WebbrowserOverlay(brNews);
+            //wb = wo.WebBrowser;
 
             path = "http://www.baidu.com";
             wb.Navigate(new Uri(path));
+            
+            
         }
+
     }
 }

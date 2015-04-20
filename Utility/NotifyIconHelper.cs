@@ -66,15 +66,24 @@ namespace WTTasks.Utility
             _NotifyIncon.Icon = WTTasks.Properties.Resources.App;
             _NotifyIncon.ContextMenuStrip = new ContextMenuStrip();
 
-            ToolStripSeparator separator1 = new ToolStripSeparator();   //分隔符
+            ToolStripMenuItem closeMonitor = new ToolStripMenuItem("关闭显示器");
+            closeMonitor.Click += closeMonitor_Click;
+
             ToolStripMenuItem menuItem1 = new ToolStripMenuItem("帮助");      //菜单1
             menuItem1.Click += menuItem1_Click;
+
+            ToolStripSeparator separator1 = new ToolStripSeparator();   //分隔符
 
             ToolStripMenuItem exitMenuItem = new ToolStripMenuItem("退出");
             exitMenuItem.Click += exitMenuItem_Click;
 
-            _NotifyIncon.ContextMenuStrip.Items.AddRange(new ToolStripItem[] { menuItem1,separator1,exitMenuItem });
+            _NotifyIncon.ContextMenuStrip.Items.AddRange(new ToolStripItem[] { closeMonitor,menuItem1,separator1,exitMenuItem });
             _NotifyIncon.Visible = true;
+        }
+
+        void closeMonitor_Click(object sender, EventArgs e)
+        {
+            Helper.Instance.CloseMonitor();
         }
 
         void exitMenuItem_Click(object sender, EventArgs e)
